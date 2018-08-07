@@ -1,0 +1,40 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------- Google Cloud Automation Script Started ---- 18-04-18-20-03
+=======================================================
+
+-- Step 1 Creating Snapshot --
+Creating snapshot(s) test-script-snap-18-04-18-20-03...done.                                                                                                         
+-- Step 2 Creating Disks --
+WARNING: You have selected a disk size of under [200GB]. This may result in poor I/O performance. For more information, see: https://developers.google.com/compute/docs/disks#performance.
+Created [https://www.googleapis.com/compute/v1/projects/wmt-stream-162506/zones/us-central1-c/disks/test-script-disk-18-04-18-20-03].
+NAME                             ZONE           SIZE_GB  TYPE         STATUS
+test-script-disk-18-04-18-20-03  us-central1-c  50       pd-standard  READY
+-- Step 3 Creating Image --
+Created [https://www.googleapis.com/compute/v1/projects/wmt-stream-162506/global/images/test-script-image-18-04-18-20-03].
+NAME                              PROJECT            FAMILY      DEPRECATED  STATUS
+test-script-image-18-04-18-20-03  wmt-stream-162506  wmt-stream              READY
+-- Step 4 Creting Template --
+WARNING: You have selected a disk size of under [200GB]. This may result in poor I/O performance. For more information, see: https://developers.google.com/compute/docs/disks#performance.
+Created [https://www.googleapis.com/compute/v1/projects/wmt-stream-162506/global/instanceTemplates/test-script-template-18-04-18-20-03].
+NAME                                 MACHINE_TYPE                PREEMPTIBLE  CREATION_TIMESTAMP
+test-script-template-18-04-18-20-03  custom (4 vCPU, 10.00 GiB)               2018-04-18T13:07:41.890-07:00
+ -- We Are Ready To Roll -- Please, Verify The Template Manually Ones! -- 
+ubuntu@testing-wmt-stream:~/stand-alone-scripts$ 
+
+==============================================
+
+{
+message: "Template Created Successfully. ",
+status: 200,
+vmName: "deployment-staging-wmt-stream",
+baseName: "test-api-script",
+cpu: "8",
+ram: "15",
+diskSize: "50",
+finalOutput: {
+snapshotFullName: "test-api-script-snap-18-04-19-18-24",
+diskFullName: "test-api-script-disk-18-04-19-18-24",
+imageFullName: "test-api-script-image-18-04-19-18-24",
+instTemplateFullName: "test-api-script-template-18-04-19-18-24",
+},
+}
